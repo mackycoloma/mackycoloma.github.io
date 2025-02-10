@@ -1,34 +1,38 @@
-title: "My Portfolio"
-description: "Welcome to my portfolio website."
-baseurl: ""  # Leave empty if deploying to GitHub Pages without a subdirectory
-url: "https://your-github-username.github.io"  # Replace with your GitHub Pages URL
+---
+layout: default
+title: "Home"
+---
 
-# Theme (GitHub Pages supports minimal-mistakes, jekyll-theme-minimal, etc.)
-theme: jekyll-theme-minimal
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+    </header>
 
-# Author Info
-author:
-  name: "Your Name"
-  email: "your.email@example.com"
+    <nav>
+        <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        </ul>
+    </nav>
 
-# Navigation (if using a theme that supports it)
-nav:
-  - title: "Home"
-    url: "/"
-  - title: "Projects"
-    url: "/projects"
-  - title: "About"
-    url: "/about"
+    <main>
+        <h2>Welcome!</h2>
+        <p>This is my portfolio site powered by Jekyll and GitHub Pages.</p>
+    </main>
 
-# Plugins (GitHub Pages allows these by default)
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-# Exclude these files from the build
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+    </footer>
+</body>
+</html>
